@@ -1,2 +1,13 @@
-import './styles.css'
+import { ContextMenu } from "./menu";
+import { BackgroundModule } from "./modules/background.module";
+import { ClicksModule } from "./modules/clicks.module";
+import { ShapeModule } from "./modules/shape.module";
 
+import "./styles.css";
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menu = new ContextMenu("#menu");
+    menu.add(new ClicksModule("clicks-module", "Считать клики (за 3 секунды)"));
+    menu.add(new ShapeModule("shape-module", "Создать фигуру"));
+    menu.add(new BackgroundModule("background-module", "Поменять цвет"));
+});
