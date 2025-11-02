@@ -9,9 +9,11 @@ export class ContextMenu extends Menu {
     this.el.style.left = `${x}px`;
     this.el.style.top = `${y}px`;
   }
+
   close() {
     this.el.style.display = "none";
   }
+
   add(module) {
     const html = module.toHTML();
 
@@ -20,6 +22,7 @@ export class ContextMenu extends Menu {
 
     const menuItem = div.firstChild;
     this.el.appendChild(menuItem);
+
     menuItem.addEventListener("click", () => {
       module.trigger();
     });
