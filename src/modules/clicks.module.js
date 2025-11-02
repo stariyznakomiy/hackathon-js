@@ -1,5 +1,4 @@
-import {Module} from '../core/module'
+import { createElement } from "react";
+import { Module } from "../core/module";
 
-export class ClicksModule extends Module {
-
-}
+export class ClicksModule extends Module {}
