@@ -1,10 +1,8 @@
-import { Module } from '../core/module'
+import { Module } from "../core/module";
 
 export class ClicksModule extends Module {
- 
-
   trigger() {
-    alert('Таймер запущен (5 сек)! Делайте клики!');
+    alert("Таймер запущен (5 сек)! Делайте клики!");
 
     let counterAllClicks = -1;
     let counterDoubleClicks = 0;
@@ -17,14 +15,16 @@ export class ClicksModule extends Module {
       counterDoubleClicks++;
     };
 
-    document.addEventListener('click', click1Handler);
-    document.addEventListener('dblclick', click2Handler);
+    document.addEventListener("click", click1Handler);
+    document.addEventListener("dblclick", click2Handler);
 
     setTimeout(() => {
-      document.removeEventListener('click', click1Handler);
-      document.removeEventListener('dblclick', click2Handler);
+      document.removeEventListener("click", click1Handler);
+      document.removeEventListener("dblclick", click2Handler);
 
-      alert(`Всего кликов - ${counterAllClicks}, в том числе ${counterDoubleClicks} двойных!`);
+      alert(
+        `Всего кликов - ${counterAllClicks}, в том числе ${counterDoubleClicks} двойных!`
+      );
     }, 5000);
   }
 }
