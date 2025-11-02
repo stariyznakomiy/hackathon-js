@@ -2,10 +2,6 @@ import { Module } from "../core/module";
 import { random } from "../utils";
 
 export class ShapeModule extends Module {
-  constructor() {
-    super("shape", "Случайная фигура");
-  }
-
   trigger() {
     const shape = document.createElement("div");
     const width = random(30, 100);
